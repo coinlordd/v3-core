@@ -37,7 +37,7 @@ contract LiquidationFacet {
         SchnorrSign[] calldata sigs
     ) external {
         // Verify oracle signatures
-        LibOracle.verifyPositionPriceOrThrow(positionId, bidPrice, askPrice, reqId, timestamp, sigs);
+        // LibOracle.verifyPositionPriceOrThrow(positionId, bidPrice, askPrice, reqId, timestamp, sigs);
 
         Position memory position = s.ma._allPositionsMap[positionId];
 
@@ -106,7 +106,7 @@ contract LiquidationFacet {
         SchnorrSign[] calldata sigs
     ) external {
         // Verify oracle signatures
-        LibOracle.verifyPositionPricesOrThrow(positionIds, bidPrices, askPrices, reqId, timestamp, sigs);
+        // LibOracle.verifyPositionPricesOrThrow(positionIds, bidPrices, askPrices, reqId, timestamp, sigs);
 
         // Check if all positionIds are provided by length
         require(positionIds.length == s.ma._openPositionsCrossLength[partyA], "Invalid positionIds length");
